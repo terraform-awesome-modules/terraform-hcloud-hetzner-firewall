@@ -1,3 +1,9 @@
+variable "firewall_rule_name" {
+    type = string
+    default = "allow-inbount-https-443"
+    description = "Name of the firewall rule"
+}
+
 variable "source_ips" {
   type = list(string)
   description = "allowed source ip subnet list. (e.g., ['10.0.0.0/24', '192.168.1.0/24'])"

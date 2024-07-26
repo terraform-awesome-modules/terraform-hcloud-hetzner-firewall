@@ -1,9 +1,3 @@
-variable "firewall_rule_name" {
-    type = string
-    default = "allow-inbount-http-80"
-    description = "Name of the firewall rule"
-}
-
 variable "direction" {
     type = string
     default = "in"
