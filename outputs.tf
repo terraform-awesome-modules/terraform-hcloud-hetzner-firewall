@@ -1,14 +1,15 @@
-output "firewall_id" {
-  value       = hcloud_firewall.firewall[each.key].id
-  description = "The ID of the created firewall."
+output "firewall_ids" {
+  value = { for idx, fw in hcloud_firewall.firewall : idx => fw.id }
+  description = "A map of all created firewall IDs, keyed by their index."
 }
 
 output "firewall_labels" {
-  value       = hcloud_firewall.firewall[each.key].labels
-  description = "The labels assigned to the firewall."
+  value = { for idx, fw in hcloud_firewall.firewall : idx => fw.labels }
+  description = "A map of labels assigned to each firewall, keyed by their index."
 }
 
 output "firewall_rules" {
-  value       = hcloud_firewall.firewall[each.key].rules
-  description = "The list of rules that are applied to the firewall."
+  value = { for idx, fw in var.firewalls : idx => fw.rules }
+  description = "The list of rules that are applied to each firewall, indexed by firewall."
 }
+
