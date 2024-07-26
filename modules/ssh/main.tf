@@ -1,6 +1,6 @@
 module "firewall" {
   source  = "terraform-awesome-modules/hetzner-firewall/hcloud//modules/ssh"
-  version = "0.1.0"
+  version = "../../"
 
   firewalls = [
     {
